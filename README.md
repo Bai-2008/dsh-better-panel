@@ -1,9 +1,7 @@
 # better-dsh-codex-effort-slider
 
-> 给 [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness)（DSH）用的 **Codex 风格推理等级滑条**：
-> 把输入框那颗模型席按钮换成一条可拖动的连续滑条 —— 一档一色、越往右越"通电"，高档位亮起紫色星云与星尘。
->
-> *A Codex-style reasoning-effort slider for DeepSeek Harness. Continuous drag, per-level colors, particle
+> 给 [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness)（DSH）用的 **Codex灵感来源的美化版模型选择器（附推理条）**：
+> *A beautiful Codex-style reasoning-effort slider and panel for DeepSeek Harness. Continuous drag, per-level colors, particle, panel.p
 > effects that intensify with effort, light/dark aware.*
 
 ![version](https://img.shields.io/badge/version-1.3.10-blue?style=flat-square)
@@ -11,13 +9,6 @@
 ![license](https://img.shields.io/badge/license-MIT-green?style=flat-square)
 ![dsh](https://img.shields.io/badge/DSH-0.2.0--rc.2-5b6ef5?style=flat-square)
 
-![三档效果：Low / High / Max（深色主题，真机截图）](preview/value-color-dark.png)
-
-浅色主题同样可读（档位文字对比度算过：白底 4.23:1、深色底 4.02:1）：
-[`preview/value-color-light.png`](preview/value-color-light.png)。
-两张图都是**真机截图**（在 DSH Desktop 里逐个档位截下来再拼接），不是渲染稿。
-
----
 
 ## 目录
 
@@ -39,10 +30,10 @@
 ## 特性
 
 - **一条连续的滑条**，不是几个离散按钮：拖动即改档位，颜色与粒子**由位置连续驱动**，与模型有几档无关。
-- **一档一色**：填充层从蓝渐变到紫罗兰，右端是当前位置的颜色；官方那一行的数值文字也跟着变色
+- **一档一色（适配多种数量档位）**：填充层从蓝渐变到紫罗兰，右端是当前位置的颜色；官方那一行的数值文字也跟着变色
   （`Off` 档保持官方灰）。
 - **越往右越"通电"**：高档位亮起紫色星云与星尘粒子，粒子数与横穿速度随位置变化。
-- **接管官方模型席，不并排**：输入区仍然只有一颗 `模型名 · 档位名 ⌄`，点开是自建的两级面板
+- **接管官方模型席，不并排**：输入区只有一颗 `模型名 · 档位名 ⌄`，点开是自建的两级面板
   （provider 列表 → 模型列表 + 搜索），**点模型不关面板**、滑条立刻跟到新模型的档位。
 - **换模型默认落在中间档**：总档数为偶数时取"中间的下一个"（4 档 → 第 3 档）。
 - **深浅主题自适应**：面板用官方菜单那套毛玻璃材料（`blur(40px) saturate(150%)`）+ 半透明底 + 阴影；
@@ -60,19 +51,12 @@
 
 三种方式，按省事程度排序：
 
-### 1. 插件面板（推荐）
+### 1. 叫DeepSeek Harness想办法安装（推荐）
 
-DSH Desktop → **设置 → 插件 → 添加插件**，填三者之一：
-
-- **本地目录路径**（clone 或解开 zip 后那一层目录）
-- **`github:Bai-2008/a-better-dsh-codex-effort-slider`**
-- **npm 包名**（走 registry）
-
-安装后**完全退出并重开 DSH Desktop**（宿主在启动时把插件读进内存，只关窗口不够）。
+DSH Desktop → 喂喂喂？帮我装个插件 → 甩个项目网址 or release里的zip包
 
 ### 2. 一键脚本
-
-当设置里没有「插件」面板时（`dsh-base` 会把 `plugin-manager` 整行 disabled）：
+当你不想打开dsh时：
 
 ```powershell
 install.cmd                    # 装进 desktop profile
@@ -291,5 +275,4 @@ cordis.patch.yml        bundle 补丁层（声明本插件在组合里的一行�
   （`1.0.0`）的**修改分支**：滑条观感、连续能量曲线、自建浮层与后续修复都在这里。
 - 目标宿主是 [deepseek-ai/deepseek-harness](https://github.com/deepseek-ai/deepseek-harness)，
   本插件只使用它的公开面（槽位、`modelDirectories` 服务与语义 DOM 锚点）。
-- 许可 **MIT**（见 [LICENSE](LICENSE)）。无可选第三方代码：闪电标 / 雪弗龙是自己画的路径，
-  粒子层是自己写的 DOM/CSS。
+- 许可 **MIT**（见 [LICENSE](LICENSE)）。
