@@ -50,7 +50,7 @@
 
 ## 安装
 
-> 不想 clone：直接下载本仓库 [Releases](https://github.com/Bai-2008/a-better-dsh-codex-effort-slider/releases)
+> 不想 clone：直接下载本仓库 [Releases](https://github.com/Bai-2008/dsh-better-panel/releases)
 > 里打包好的 zip（`dsh-better-panel-<version>.zip`）。
 
 三种方式，按省事程度排序：
@@ -76,7 +76,7 @@ install.cmd -Uninstall         # 卸载
 
 ```powershell
 dsh plugin --profile tui add link:"<插件的绝对路径>"
-dsh plugin --profile tui add github:Bai-2008/a-better-dsh-codex-effort-slider
+dsh plugin --profile tui add github:Bai-2008/dsh-better-panel
 ```
 
 `desktop` 是 Electron 保留 profile，命令行会被直接拒绝：
