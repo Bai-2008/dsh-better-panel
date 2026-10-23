@@ -1,14 +1,18 @@
 # dsh-better-panel
 
-> 给 [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness)（DSH）用的 **Codex灵感来源的美化版模型选择器（附推理条）**：
-> *A beautiful Codex-style reasoning-effort slider and panel for DeepSeek Harness. Continuous drag, per-level colors, particle, panel.p
-> effects that intensify with effort, light/dark aware.*
+> 给 [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness)（DSH）用的 **Codex 灵感来源的美化版模型选择器（附推理条）**。
+> *A beautiful Codex-style reasoning-effort slider and panel for DeepSeek Harness — continuous drag,
+> per-level colors, particle effects that intensify with effort, light/dark aware.*
 
 ![version](https://img.shields.io/badge/version-2.0.0-blue?style=flat-square)
 ![tests](https://img.shields.io/badge/tests-911%20passing-brightgreen?style=flat-square)
 ![license](https://img.shields.io/badge/license-MIT-green?style=flat-square)
 ![dsh](https://img.shields.io/badge/DSH-0.2.0--rc.2-5b6ef5?style=flat-square)
 
+![三档效果：Low / High / Max（深色主题，真机截图）](preview/value-color-dark.png)
+
+浅色主题同样可读：[`preview/value-color-light.png`](preview/value-color-light.png)。
+两张都是**真机截图**（在 DSH Desktop 里逐档截下来拼接），不是渲染稿。
 
 ## 目录
 
