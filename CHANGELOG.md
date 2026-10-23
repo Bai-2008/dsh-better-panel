@@ -11,6 +11,22 @@
 
 ---
 
+## 2.0.0 — 改名：`better-dsh-codex-effort-slider` → **`dsh-better-panel`**
+
+包名、客户端模块 id、`PACKAGE_ID`、样式表标记（`dsh-better-panel/picker`）、
+cordis 补丁行 id（`better-panel`）与全部文档一起改名。**功能没有任何变化**，
+但包名变了属于破坏性变更，所以按 semver 升到 2.0.0。
+
+升级注意：老安装是"按包名"记在 profile 里的，改名后**必须把 profile 的依赖与
+`dsh.profile.bundles` 换成新名字**（或直接用 `install.cmd` 重装），否则宿主找不到它 —— 界面表现是
+"插件整块消失、控制台很安静"（这类故障的排查套路见 [INCIDENTS.md 第 4 条](INCIDENTS.md)）。
+
+保留未改：上游项目名 `dsh-codex-effort-slider`（署名用）与本仓库 URL（GitHub 仓库改名是另一件事）。
+
+测试 911 项仍全绿。
+
+---
+
 ## 1.3.10 — 再透一档；阴影不再被"一个框"裁掉
 
 - **阴影被裁成矩形**：定位壳 `.cxp-root` 的 `overflow:auto` 会裁掉后代的 `box-shadow`。
@@ -163,7 +179,7 @@ single 槽"同优先级撞了会抛错、换优先级即遮蔽（最低者渲染
 - **手感**：拖动不再跟手（一档一格）、按下=点哪去哪、快慢两档动画（320/200ms 迟滞）。
 - **性能**：写回从 120ms 节流改成 **260ms 停顿去抖**（连续拖动 0 次写回）。
 - **交互**：去掉键盘操作，官方菜单的键盘导航恢复原样。
-- **工程**：包名改为 `better-dsh-codex-effort-slider`（与上游可并存）、补上 `pack-dist.ps1`、
+- **工程**：包名改为 `dsh-better-panel`（与上游可并存）、补上 `pack-dist.ps1`、
   清理两处死代码。
 
 测试 265 → **337**。

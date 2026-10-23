@@ -1,5 +1,5 @@
 /**
- * better-dsh-codex-effort-slider — 客户端离线测试
+ * dsh-better-panel — 客户端离线测试
  *
  * 跑法：`node test/client.test.mjs`
  *
@@ -386,7 +386,7 @@ function tierCountLabelText(internals, index, modelId) {
 section("1. 接线与产物");
 {
   const { registration, plugin, document, host, internals } = await setup();
-  eq(registration.id, "better-dsh-codex-effort-slider", "[1] bundle 注册 id 正确");
+  eq(registration.id, "dsh-better-panel", "[1] bundle 注册 id 正确");
   ok(Array.isArray(plugin.inject) && plugin.inject.indexOf("slots") >= 0, "[1] inject 含 slots");
   ok(plugin.inject.indexOf("modelDirectories") >= 0, "[1] inject 含 modelDirectories（读写官方档位靠它）");
   ok(plugin.inject.indexOf("sessions") >= 0, "[1] inject 含 sessions（判子代理会话靠它）");
@@ -394,10 +394,10 @@ section("1. 接线与产物");
   eq(internals.SLOT_NAME, "conversation.input.right", "[1] 它的插槽锚点常量仍在（把它改回 true 即可恢复）");
   eq(internals.ENTRY_ID, "codex-effort-slider", "[1] 条目 id 沿用上游（写进 cordis.patch.yml 的 include 锚点，故意不改名）");
   ok(typeof internals.CodexEffortSlider === "function", "[1] 组件本身仍在（第 2–26 节直接挂它来测行为）");
-  const styles = document.querySelectorAll('style[data-plugin-css="better-dsh-codex-effort-slider"]');
+  const styles = document.querySelectorAll('style[data-plugin-css="dsh-better-panel"]');
   eq(styles.length, 1, "[1] 样式挂载一次");
   internals.installStyles();
-  eq(document.querySelectorAll('style[data-plugin-css="better-dsh-codex-effort-slider"]').length, 1, "[1] 重复安装样式是幂等的");
+  eq(document.querySelectorAll('style[data-plugin-css="dsh-better-panel"]').length, 1, "[1] 重复安装样式是幂等的");
   eq(host.subscriptions.length, 0, "[1] apply 期间没有订阅任何宿主事件");
   ok(internals.CSS.indexOf(".ces-track") > 0, "[1] 样式里有轨道规则");
 }
@@ -2322,7 +2322,7 @@ section("32. 包内 chunk 的加载契约（真机踩过：入口按钮根本不
   const run = new Function("window", "document", "console", "setTimeout", "clearTimeout", source);
   run(fakeWindow, null, console, setTimeout, clearTimeout);
   ok(registration !== null, "[32] 脚本执行后确实调用了一次 load()");
-  eq(registration.id, "better-dsh-codex-effort-slider", "[32] 注册 id 与包名一致（模块表会把 <包名>/<文件名> 当作 key）");
+  eq(registration.id, "dsh-better-panel", "[32] 注册 id 与包名一致（模块表会把 <包名>/<文件名> 当作 key）");
   eq(registration.chunk, "client.picker.js", "[32] chunk 字段正确");
   const chunkExports = registration.factory(() => null);
   ok(chunkExports !== null && typeof chunkExports.createPickerTrigger === "function", "[32] 工厂交出了 createPickerTrigger");
@@ -2365,7 +2365,7 @@ section("34. 样式真的进了文档（真机踩过：参数被静默忽略 →
   const texts = styles.map((tag) => String(tag.textContent ?? ""));
   const markers = styles.map((tag) => tag.getAttribute("data-plugin-css"));
   eq(styles.length, 2, "[34] 文档里挂了**两张**样式表：官方菜单那条 + 自建浮层那条");
-  ok(markers.indexOf("better-dsh-codex-effort-slider") >= 0, "[34] 官方菜单那份用原标记");
+  ok(markers.indexOf("dsh-better-panel") >= 0, "[34] 官方菜单那份用原标记");
   ok(
     markers.some((marker) => typeof marker === "string" && marker.indexOf("/picker") > 0),
     "[34] 浮层那份用 …/picker 标记（与前一张分开去重）",
@@ -2653,10 +2653,10 @@ section("37. 审核回归：死区 / 星空宽度 / 样式标记 / slow 规则 /
   {
     const scene = await setupPicker();
     const api = internalsOf(scene.bundle);
-    eq(api.PICKER_STYLE_MARKER, "better-dsh-codex-effort-slider/picker", "[37] 标记 = <包名>/picker（不是 undefined/picker）");
+    eq(api.PICKER_STYLE_MARKER, "dsh-better-panel/picker", "[37] 标记 = <包名>/picker（不是 undefined/picker）");
     const markers = scene.document.head.querySelectorAll("style").map((t) => t.getAttribute("data-plugin-css"));
     eq(markers.indexOf("undefined/picker"), -1, "[37] 文档里不存在 undefined/ 前缀的标记");
-    ok(markers.indexOf("better-dsh-codex-effort-slider/picker") >= 0, "[37] 浮层样式用的是带包名的标记（去重不会误撞别人的样式表）");
+    ok(markers.indexOf("dsh-better-panel/picker") >= 0, "[37] 浮层样式用的是带包名的标记（去重不会误撞别人的样式表）");
   }
 
   // ── #4 快/慢档：data-slide 得有对应规则，否则那一整套是死代码 ─────────────────

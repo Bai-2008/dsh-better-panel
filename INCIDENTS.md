@@ -66,7 +66,7 @@
 **怎么找到的**：1.3.6 把"失败原因"摆到了面板与控制台上，控制台立刻给出原话：
 
 ```
-[better-dsh-codex-effort-slider] 会话目录还没就绪：cannot get property "remote.session" without inject
+[dsh-better-panel] 会话目录还没就绪：cannot get property "remote.session" without inject
 ```
 
 这是 **Cordis 的服务注入报错**：服务访问是**跟着调用方 ctx** 走的。
@@ -135,7 +135,7 @@ const directory = new ModelDirectory(this.ctx.remote.session, …);   // 只有�
 插件管理器里那一行给的是决定性的信息：
 
 ```
-{ "name": "better-dsh-codex-effort-slider", "enabled": true, "installed": true,
+{ "name": "dsh-better-panel", "enabled": true, "installed": true,
   "error": { "code": "operation-error",
              "diagnostic": "Unexpected token '\uFEFF', \"\uFEFF{\r\n  \"nam\"... is not valid JSON" },
   "rows": [] }

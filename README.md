@@ -1,10 +1,10 @@
-# better-dsh-codex-effort-slider
+# dsh-better-panel
 
 > 给 [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness)（DSH）用的 **Codex灵感来源的美化版模型选择器（附推理条）**：
 > *A beautiful Codex-style reasoning-effort slider and panel for DeepSeek Harness. Continuous drag, per-level colors, particle, panel.p
 > effects that intensify with effort, light/dark aware.*
 
-![version](https://img.shields.io/badge/version-1.3.10-blue?style=flat-square)
+![version](https://img.shields.io/badge/version-2.0.0-blue?style=flat-square)
 ![tests](https://img.shields.io/badge/tests-911%20passing-brightgreen?style=flat-square)
 ![license](https://img.shields.io/badge/license-MIT-green?style=flat-square)
 ![dsh](https://img.shields.io/badge/DSH-0.2.0--rc.2-5b6ef5?style=flat-square)
@@ -47,7 +47,7 @@
 ## 安装
 
 > 不想 clone：直接下载本仓库 [Releases](https://github.com/Bai-2008/a-better-dsh-codex-effort-slider/releases)
-> 里打包好的 zip（`better-dsh-codex-effort-slider-<version>.zip`）。
+> 里打包好的 zip（`dsh-better-panel-<version>.zip`）。
 
 三种方式，按省事程度排序：
 
@@ -220,7 +220,7 @@ npm run preview   # 生成 preview/panel.html（浏览器打开即可拖、切�
 ## 打包与发布
 
 ```powershell
-npm run pack        # 运行时包：dist/better-dsh-codex-effort-slider-<version>.zip
+npm run pack        # 运行时包：dist/dsh-better-panel-<version>.zip
 npm run pack:src    # 源码包：…-<version>-src.zip
 ```
 

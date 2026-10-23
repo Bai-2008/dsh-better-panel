@@ -21,7 +21,7 @@ import { fileURLToPath } from "node:url";
 const ROOT = fileURLToPath(new URL("..", import.meta.url));
 const SRC = `${ROOT}lib/client.picker.src.js`;
 const OUT = `${ROOT}lib/client.picker.js`;
-const PACKAGE_ID = "better-dsh-codex-effort-slider";
+const PACKAGE_ID = "dsh-better-panel";
 const CHUNK_FILE = "client.picker.js";
 const MARKER = "/* dsh-client-chunk: generated from lib/client.picker.src.js — 不要手改 */";
 

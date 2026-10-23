@@ -1,7 +1,7 @@
 # 修改说明
 
 本仓库是上游 [dsh-codex-effort-slider](https://github.com/Microqian2th/dsh-codex-effort-slider) `1.0.0` 的**修改分支**，
-当前版本 `1.3.10`。这份文档说明**改了什么、为什么改、怎么验证、哪些是已知取舍**。
+当前版本 `2.0.0`。这份文档说明**改了什么、为什么改、怎么验证、哪些是已知取舍**。
 
 按主题分四类：
 
@@ -172,7 +172,7 @@ the global superellipse"），本插件照做：**6 条带圆角的规则全部�
 `package.json` 的 `npm run pack` 一直引用它，但发布包里**从来没有这个文件**。补齐后：
 
 ```powershell
-npm run pack     # → dist/better-dsh-codex-effort-slider-1.1.0.zip
+npm run pack     # → dist/dsh-better-panel-1.1.0.zip
 ```
 
 zip 结构与上游一致：**单层同名根目录**，解开后那一层目录即可作为 DSH 面板要填的本地路径。
@@ -273,7 +273,7 @@ node preview/make-preview.mjs  # 生成 preview/panel.html，直接用浏览器�
 
 以下三处**故意沿用上游的标识**，以免与上游的既有安装冲突时产生歧义，也方便对照上游代码：
 
-- **bundle 注册 id / 模块 id** = `better-dsh-codex-effort-slider`（改名了，与上游不同包名，两者可并存）
+- **bundle 注册 id / 模块 id** = `dsh-better-panel`（改名了，与上游不同包名，两者可并存）
 - **插槽条目 id** = `codex-effort-slider`（**故意不改名** —— 它是写进 `cordis.patch.yml` 的 include 锚点，
   测试里对这一点有专门断言，避免以后有人"顺手"改掉而悄悄破坏加载器那一行）
 

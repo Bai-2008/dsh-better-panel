@@ -1,5 +1,5 @@
 @echo off
-rem better-dsh-codex-effort-slider installer (Windows wrapper).
+rem dsh-better-panel installer (Windows wrapper).
 rem Runs install-profile.ps1 with the execution policy bypassed for this run only
 rem (no machine-wide policy change). Pass through args, e.g.:
 rem   install.cmd -Profile tui

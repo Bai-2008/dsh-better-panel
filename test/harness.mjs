@@ -1035,7 +1035,7 @@ export function createFakeHost(options = {}) {
 /* ─────────────────────── 加载真实产物 ─────────────────────── */
 
 /** `lib/client.picker.js` 在模块表里的 id（真宿主里是 `<包名>/client.picker.js`）。 */
-export const PICKER_MODULE_ID = "better-dsh-codex-effort-slider/client.picker.js";
+export const PICKER_MODULE_ID = "dsh-better-panel/client.picker.js";
 
 /**
  * 把真实的包内 chunk `lib/client.picker.js` 加载成模块对象。

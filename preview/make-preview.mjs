@@ -173,7 +173,7 @@ const html = `<!doctype html>
 <html lang="zh-CN">
 <head>
 <meta charset="utf-8">
-<title>better-dsh-codex-effort-slider — 观感预览（官方菜单那一行）</title>
+<title>dsh-better-panel — 观感预览（官方菜单那一行）</title>
 <style>
 /* ── 预览页自带的最小主题令牌（取自 DSH 官方 ui-theme 的真实取值）──
    真插件在 DSH 里直接用官方令牌，这里只是为了在浏览器里还原同一套观感。 */
