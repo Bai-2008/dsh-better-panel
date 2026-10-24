@@ -275,8 +275,24 @@ cordis.patch.yml        bundle 补丁层（声明本插件在组合里的一行�
 
 ## 致谢与许可
 
-- 本仓库是 [Microqian2th/dsh-codex-effort-slider](https://github.com/Microqian2th/dsh-codex-effort-slider)
-  （`1.0.0`）的**修改分支**：滑条观感、连续能量曲线、自建浮层与后续修复都在这里。
-- 目标宿主是 [deepseek-ai/deepseek-harness](https://github.com/deepseek-ai/deepseek-harness)，
+### 上游插件与它的贡献
+
+本仓库是 **[Microqian2th/dsh-codex-effort-slider](https://github.com/Microqian2th/dsh-codex-effort-slider)**
+（`1.0.0`，MIT）的 **fork** —— 它贡献了这套做法的起点：
+
+- **滑条注入官方菜单**的思路与实现：把官方「推理等级」那一行加高、往里面塞一条连续滑条。
+  本仓库的 A 路径（`ENABLE_OFFICIAL_MENU_SLIDER = true`）就是基于它改的。
+- **连续滑条**本身：拖到哪、档位跟到哪，填充从蓝渐变到紫罗兰，高档位亮起星尘粒子，
+  官方那一行的数值文字跟着变色。
+- **"只读写官方公开面"** 的整体做法（槽位注册、`modelDirectories` 目录、语义 DOM 锚点），
+  以及档位写回的 120ms 节流版本。
+
+本仓库在上游之上：重做观感（球/轨道比例、对比度、圆角 opt-out）、把拖动改成一档一格 + 停顿去抖、
+补了档位字典与三处只读注记，并新增 **自建浮层 + 接管官方模型席**（两级面板、毛玻璃、中间档默认），
+连同 911 项离线断言与这套文档。自建浮层的布局参考了 `code.html` 那份原型稿。
+
+### 宿主与许可
+
+- **目标宿主**：[deepseek-ai/deepseek-harness](https://github.com/deepseek-ai/deepseek-harness) ——
   本插件只使用它的公开面（槽位、`modelDirectories` 服务与语义 DOM 锚点）。
-- 许可 **MIT**（见 [LICENSE](LICENSE)）。
+- **许可**：**MIT**（见 [LICENSE](LICENSE)；上游与本仓库的版权行都保留在里面）。
