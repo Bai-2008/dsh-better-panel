@@ -1,6 +1,6 @@
 # 更新日志
 
-本分支基于上游 [dsh-codex-effort-slider](https://github.com/Microqian2th/dsh-codex-effort-slider) `1.0.0`。
+这个插件的做法起始于 [dsh-codex-effort-slider](https://github.com/Microqian2th/dsh-codex-effort-slider) `1.0.0`。
 下面是相对上游的**全部**改动（按版本倒序）。
 
 > 文档分工：入门/安装/使用/FAQ → [README.md](README.md)；

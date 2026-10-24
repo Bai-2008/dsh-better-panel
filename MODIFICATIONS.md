@@ -1,6 +1,6 @@
 # 修改说明
 
-本仓库是上游 [dsh-codex-effort-slider](https://github.com/Microqian2th/dsh-codex-effort-slider) `1.0.0` 的**修改分支**，
+这个插件的做法起始于 [dsh-codex-effort-slider](https://github.com/Microqian2th/dsh-codex-effort-slider) `1.0.0`，
 当前版本 `2.0.0`。这份文档说明**改了什么、为什么改、怎么验证、哪些是已知取舍**。
 
 按主题分四类：
@@ -26,7 +26,7 @@
 和客户端一样。
 
 ```
-BEFORE（上游 1.0.0）              AFTER（本分支 1.1.0）
+BEFORE（起点版本 1.0.0）              AFTER（本插件 1.1.0）
 轨道 28px，球 28px                轨道 20px，球 28px
 ┌────────────────────────┐        ┌────────────────────────┐
 │███████●                │        │███████ ⬤               │   ← 球上下浮出 4px
@@ -400,4 +400,4 @@ install.cmd / install-profile.ps1  安装/卸载辅助
 CHANGELOG.md           按主题归并的变更记录
 ```
 
-许可：MIT（沿用上游，`LICENSE` 中保留了上游版权声明并另加本分支一行）。
+许可：MIT（沿用上游，`LICENSE` 中保留了上游版权声明并另加本插件一行）。
