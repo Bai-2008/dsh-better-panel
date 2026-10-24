@@ -8,7 +8,9 @@
 ![tests](https://img.shields.io/badge/tests-911%20passing-brightgreen?style=flat-square)
 ![license](https://img.shields.io/badge/license-MIT-green?style=flat-square)
 ![dsh](https://img.shields.io/badge/DSH-0.2.0--rc.2-5b6ef5?style=flat-square)
+
 **支持最新0107模型！只是不显示**
+
 ![三档效果：Low / High / Max（深色主题，真机截图）](preview/value-color-dark.png)
 
 浅色主题同样可读：[`preview/value-color-light.png`](preview/value-color-light.png)。
