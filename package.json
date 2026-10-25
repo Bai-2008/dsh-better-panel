@@ -4,6 +4,14 @@
   "private": true,
   "description": "Codex 风格的推理等级滑条：把 DSH 输入框工具行的推理等级档位换成一条可拖动的连续滑条 / A Codex-style reasoning-effort slider for DeepSeek Harness",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Bai-2008/dsh-better-panel.git"
+  },
+  "homepage": "https://github.com/Bai-2008/dsh-better-panel#readme",
+  "bugs": {
+    "url": "https://github.com/Bai-2008/dsh-better-panel/issues"
+  },
   "keywords": [
     "dsh",
     "dsh-plugin",
