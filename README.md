@@ -55,7 +55,7 @@
 > 不想 clone：直接下载本仓库 [Releases](https://github.com/Bai-2008/dsh-better-panel/releases)
 > 里打包好的 zip（`dsh-better-panel-<version>.zip`）。
 
-三种方式，按省事程度排序：
+四种方式，按省事程度排序：
 
 ### 1. 叫DeepSeek Harness想办法安装（推荐）
 
@@ -86,6 +86,31 @@ dsh plugin --profile tui add github:Bai-2008/dsh-better-panel
 ```
 error: profile "desktop" is managed exclusively by the Electron application
 ```
+
+### 4. pnpm（自己管 profile 依赖）
+
+profile 本身就是 pnpm 工程（`~/.dsh/profiles/<名字>/` 下有 `pnpm-lock.yaml`），
+所以也可以用 pnpm 直接装：
+
+```powershell
+cd $env:USERPROFILE\.dsh\profiles\desktop     # tui 或别的 profile 同理
+pnpm add link:"<插件的绝对路径>"
+```
+
+装完 `dependencies` 里会多一条 `"dsh-better-panel": "link:…"`，`node_modules` 下也有链接了
+（这两步 pnpm 已经做过验证）。
+
+⚠️ 但 pnpm **只写 `dependencies`**，不会把它加进 `dsh.profile.bundles` —— 宿主靠那个数组决定加载哪些
+bundle，所以要手工补一行：
+
+```json
+"dsh": { "profile": { "bundles": ["…", "dsh-better-panel"] } }
+```
+
+改完**完全退出并重开** DSH Desktop 才生效。想一步到位就用 ①/② —— 它们会自动补 `bundles`。
+
+> 从 GitHub 直接装也可以（`pnpm add github:Bai-2008/dsh-better-panel`），但它走 git 拉取，
+> 比 `link:` 慢也更依赖网络；本地已有目录时用上面那条更稳。
 
 ### 升级与卸载
 
